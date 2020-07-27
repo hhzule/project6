@@ -3,7 +3,7 @@ import  QuestionCard  from  './components/QuestionCard';
 import { fetchQuestions } from './API';
 import {QuestionState, Difficulty } from './API';
 import { GlobalStyle } from './App.styles';
-
+import style from './components/QC.module.css';
 
 export type AnswerObject = {
   question: string;
@@ -78,7 +78,7 @@ const [loading, setLoading] = useState(false);
     <div className="App">
     <h1> Quiz App </h1>
     {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
-    <button className='start' onClick={startQuiz}>
+    <button className={style.start} onClick={startQuiz}>
       Start
     </button> ) : null}
 
@@ -94,7 +94,7 @@ const [loading, setLoading] = useState(false);
        userAnswer={userAnswers? userAnswers[number] : undefined}
        callback={checkAnswer}
       />)}
-      {!gameOver && !loading && userAnswers.length === number+1 && number!== TOTAL_QUESTIONS-1 ? ( <button className='next' onClick={nextQuestion}>next</button>
+      {!gameOver && !loading && userAnswers.length === number+1 && number!== TOTAL_QUESTIONS-1 ? ( <button className={style.next} onClick={nextQuestion}>Next</button>
     
     ): null}
      </div>

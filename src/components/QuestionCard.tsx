@@ -23,6 +23,7 @@ type Props = {
 
 return(
     <>
+    <div className={style.main}>
     <div className={style.card}>
     <p className='number'>
 Question card: {questionNum}/ {totalQuestions}
@@ -36,6 +37,7 @@ Question card: {questionNum}/ {totalQuestions}
            </button>
        </div>
     ))}
+</div>
 </div>
 </div>
     </>

@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
  padding: 0 20px;
  display: flex;
  justify-content: center;
-
+ background-color: rgba(255, 255, 255, 0.1) !important;
 }
 * {
     box-sizing: border-box;
