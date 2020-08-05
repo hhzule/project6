@@ -20,7 +20,7 @@ export type AnswerObject = {
   const messaging = firebase.messaging();
   messaging.requestPermission().then(() => {
     return messaging.getToken()
-  }).then((token) => {
+  }).then((token: any) => {
       console.log('token',token);
   })
   // firebase
