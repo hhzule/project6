@@ -5,6 +5,7 @@ import {QuestionState, Difficulty } from './API';
 import { GlobalStyle } from './App.styles';
 import style from './components/QC.module.css';
 import './main.css';
+import firebase from './firebase';
 
 export type AnswerObject = {
   question: string;
@@ -15,7 +16,14 @@ export type AnswerObject = {
 
  const App = () => {
 
- 
+ // firebase messaging
+  const messaging = firebase.messaging();
+  messaging.requestPermission().then(() => {
+    return messaging.getToken()
+  }).then((token) => {
+      console.log('token',token);
+  })
+  // firebase
 const TOTAL_QUESTIONS = 10;
  
 
